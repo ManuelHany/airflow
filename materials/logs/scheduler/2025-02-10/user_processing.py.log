@@ -1,0 +1,11 @@
+[2025-02-10T14:48:03.736+0000] {processor.py:154} INFO - Started process (PID=21326) to work on /opt/airflow/dags/user_processing.py
+[2025-02-10T14:48:03.737+0000] {processor.py:756} INFO - Processing file /opt/airflow/dags/user_processing.py for tasks to queue
+[2025-02-10T14:48:03.738+0000] {logging_mixin.py:120} INFO - [2025-02-10T14:48:03.738+0000] {dagbag.py:537} INFO - Filling up the DagBag from /opt/airflow/dags/user_processing.py
+[2025-02-10T14:48:03.839+0000] {processor.py:766} INFO - DAG(s) dict_keys(['user_processing']) retrieved from /opt/airflow/dags/user_processing.py
+[2025-02-10T14:48:03.956+0000] {logging_mixin.py:120} INFO - [2025-02-10T14:48:03.955+0000] {manager.py:507} INFO - Created Permission View: can read on DAG:user_processing
+[2025-02-10T14:48:03.966+0000] {logging_mixin.py:120} INFO - [2025-02-10T14:48:03.966+0000] {manager.py:507} INFO - Created Permission View: can delete on DAG:user_processing
+[2025-02-10T14:48:03.974+0000] {logging_mixin.py:120} INFO - [2025-02-10T14:48:03.974+0000] {manager.py:507} INFO - Created Permission View: can edit on DAG:user_processing
+[2025-02-10T14:48:03.974+0000] {logging_mixin.py:120} INFO - [2025-02-10T14:48:03.974+0000] {dag.py:2585} INFO - Sync 1 DAGs
+[2025-02-10T14:48:03.990+0000] {logging_mixin.py:120} INFO - [2025-02-10T14:48:03.990+0000] {dag.py:2606} INFO - Creating ORM DAG for user_processing
+[2025-02-10T14:48:04.006+0000] {logging_mixin.py:120} INFO - [2025-02-10T14:48:04.006+0000] {dag.py:3340} INFO - Setting next_dagrun for user_processing to 2025-02-09T00:00:00+00:00, run_after=2025-02-10T00:00:00+00:00
+[2025-02-10T14:48:04.024+0000] {processor.py:176} INFO - Processing /opt/airflow/dags/user_processing.py took 0.293 seconds
