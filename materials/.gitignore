@@ -7,6 +7,8 @@ __pycache__
 */__pycache__/
 **/__pycache__
 **/__pycache__/
+dags/__pycache__
+dags/__pycache__/
 
 logs/
 logs
@@ -118,7 +120,7 @@ celerybeat-schedule
 *.sage.py
 
 # dotenv
-# .env
+.env
 
 # virtualenv
 .venv
