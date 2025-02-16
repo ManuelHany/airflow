@@ -158,7 +158,6 @@ media_email/
 */static
 
 local_*
-requirements.txt
 geckodriver*
 
 test_app.py
