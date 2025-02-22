@@ -30,6 +30,29 @@ task1 = PythonOperator(
 )
 ```
 
+- You can save (push) data to XCOm database either through the return value of the `python_callable` attribute of task. Or using the `xcom_push` which allow us to set the key value of the data.
+
+```Python
+def _t1(ti):
+    t1.xcom_push(key='my_key', value=42)
+
+def _t2(ti):
+    retrieved_data = ti.xcom_pull(key='my_key', task_ids='t1)
+```
+
+### Trigger Rules
+
+1. all_success – Task runs when all upstream tasks succeed (default).
+2. all_failed – Task runs when all upstream tasks fail.
+3. all_done – Task runs when all upstream tasks are finished (success, failure, or skipped).
+4. one_success – Task runs if at least one upstream task succeeds.
+5. one_failed – Task runs if at least one upstream task fails.
+6. none_failed – Task runs if no upstream task fails (success or skipped).
+7. none_failed_or_skipped – Task runs if no upstream task fails or is skipped.
+8. none_skipped – Task runs if no upstream task is skipped (all must be success or fail).
+9. always – Task runs regardless of upstream task status.
+10. dummy (Deprecated in Airflow 2.0+) – Same as always, used for placeholder tasks.
+
 ### General
 
 - Deploying airflow through docker requires you to configure it not from theconf file but instead from the docker-compose file inside the environment variablaes there.
