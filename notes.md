@@ -56,4 +56,28 @@ def _t2(ti):
 ### General
 
 - Deploying airflow through docker requires you to configure it not from theconf file but instead from the docker-compose file inside the environment variablaes there.
--
+- to export connections use
+
+```bash
+docker exec -it airflow-airflow-webserver-1 airflow connections list --output json > connections.json
+```
+
+- while to import them use:
+
+```bash
+# copy connections inside container
+docker cp connections.json airflow-airflow-webserver-1:/connections.json
+# run inside container:
+docker exec -it airflow-airflow-webserver-1 sh -c "
+jq -c '.[]' /connections.json | while read -r conn; do
+    airflow connections add \
+    --conn-id \"\$(echo \$conn | jq -r '.conn_id')\" \
+    --conn-type \"\$(echo \$conn | jq -r '.conn_type')\" \
+    --conn-host \"\$(echo \$conn | jq -r '.host')\" \
+    --conn-login \"\$(echo \$conn | jq -r '.login')\" \
+    --conn-password \"\$(echo \$conn | jq -r '.password')\" \
+    --conn-schema \"\$(echo \$conn | jq -r '.schema')\" \
+    --conn-port \"\$(echo \$conn | jq -r '.port')\" \
+    --conn-extra \"\$(echo \$conn | jq -r '.extra')\"
+done"
+```

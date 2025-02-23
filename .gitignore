@@ -173,3 +173,7 @@ chromedriver.exe
 **/*_local.py
 **/*_Local.py
 **/*_LOCAL.py
+
+# slides
+**/*slides*/**
+
