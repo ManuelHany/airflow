@@ -56,22 +56,6 @@ def _t2(ti):
 ### General
 
 - Deploying airflow through docker requires you to configure it not from theconf file but instead from the docker-compose file inside the environment variablaes there.
-- to export connections use
-
-```bash
-# enter container
-docker exec -it airflow-airflow-webserver-1
-# export connections
-airflow connections export connections.json
-```
-
-- while to import them use:
-
-```bash
-# copy connections inside container
-docker cp connections.json airflow-airflow-webserver-1:/connections.json
-# enter container:
-docker exec -it airflow-airflow-webserver-1
-# import connections
-airflow connections import connections.json
-```
+- watch appendix 91. templates and macros in apache airflow
+- watch appendix 95. best practices in apache airflow
+-
