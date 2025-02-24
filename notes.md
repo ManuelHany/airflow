@@ -53,6 +53,14 @@ def _t2(ti):
 9. always – Task runs regardless of upstream task status.
 10. dummy (Deprecated in Airflow 2.0+) – Same as always, used for placeholder tasks.
 
+### Docker Operator:
+
+1. the networks are usually two types, `bridge` and `host`.
+2. to mount volumes in docker you need to enable the `Use gPRC FUSE for file sharing` option on docker `macOs`.
+3. in the command field yo uhave to leave space at the end of line in order for docker operator to apply it as a shell command.
+4. if docker operator run inside a docker you have to disable the functionality of large files mount using the argument `mount_tmp_dir=False`.
+5. always set a `container_name` and a `tag` for you image.
+
 ### General
 
 - Deploying airflow through docker requires you to configure it not from theconf file but instead from the docker-compose file inside the environment variablaes there.
